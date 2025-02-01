@@ -1,7 +1,7 @@
 
 CC=gcc
 
-CFLAGS= -O3 -march=native
+CFLAGS= -O2
 LDFLAGS=-O2
 
 SOURCES=sph_jh.c sph_blake.c sph_bmw.c sph_groestl.c sph_skein.c sph_keccak.c sph_luffa.c sph_cubehash.c sph_shavite.c \

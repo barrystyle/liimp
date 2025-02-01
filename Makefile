@@ -1,7 +1,7 @@
 
 CC=gcc
 
-CFLAGS= -g -march=native
+CFLAGS= -O2
 SQLFLAGS= `mysql_config --cflags --libs`
 
 # Comment this line to disable address check on login,
@@ -30,9 +30,12 @@ OUTPUT=stratum
 CODEDIR1=algos
 CODEDIR2=sha3
 
-.PHONY: projectcode1 projectcode2
+.PHONY: projectcode0 projectcode1 projectcode2
 
-all: projectcode1 projectcode2 $(SOURCES) $(OUTPUT)
+all: projectcode0 projectcode1 projectcode2 $(SOURCES) $(OUTPUT)
+
+projectcode0:
+	cd iniparser && make clean && make
 
 projectcode1:
 	$(MAKE) -C $(CODEDIR1)
